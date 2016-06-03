@@ -16,7 +16,7 @@ $address = $_POST['address'];
 $other = $_POST['other'];
 
 //紅色字體為判斷密碼是否填寫正確
-if($_SESSION['username'] != null && $pw != null && $pw2 != null && $pw == $pw2)
+if(isset($_SESSION['username']) && $pw != null && $pw2 != null && $pw == $pw2)
 {
         $id = $_SESSION['username'];
     

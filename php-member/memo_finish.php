@@ -11,7 +11,7 @@ $id = $_SESSION['userid'];
 $memo = $_POST['memo'];
 
 
-if($id != null )
+if(isset($id))
 {
         //新增資料進資料庫語法
         $sql = "insert into memo (userid, memo) values ('$id', '$memo')";

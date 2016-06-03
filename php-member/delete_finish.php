@@ -9,7 +9,7 @@
 include("mysql_connect.inc.php");
 $id = $_POST['id'];
 
-if($_SESSION['username'] != null)
+if(isset($_SESSION['username']))
 {
         //刪除資料庫資料語法
         $sql = "delete from member_table where username='$id'";

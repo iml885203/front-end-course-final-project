@@ -8,7 +8,7 @@
 <?php
 include("mysql_connect.inc.php");
 
-if($_SESSION['username'] != null)
+if(isset($_SESSION['username']))
 {
         //將$_SESSION['username']丟給$id
         //這樣在下SQL語法時才可以給搜尋的值
