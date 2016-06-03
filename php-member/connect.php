@@ -11,7 +11,7 @@
 //只要此頁面上有用到連接MySQL就要include它
 include("mysql_connect.inc.php");
 $id = $_POST['id'];
-$pw = $_POST['pw'];
+$pw = md5($_POST['pw']);
 
 //搜尋資料庫資料
 $sql = "SELECT * FROM member_table where username = '$id'";

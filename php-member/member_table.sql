@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `member_table` (
   `NO` int(6) NOT NULL AUTO_INCREMENT COMMENT '序號',
   `username` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `password` varchar(32) NOT NULL,
   `telephone` varchar(12) DEFAULT NULL,
   `address` varchar(30) DEFAULT NULL,
   `other` varchar(30) DEFAULT NULL,

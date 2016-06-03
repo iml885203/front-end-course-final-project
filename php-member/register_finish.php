@@ -9,8 +9,8 @@
 include("mysql_connect.inc.php");
 
 $id = $_POST['id'];
-$pw = $_POST['pw'];
-$pw2 = $_POST['pw2'];
+$pw = md5($_POST['pw']);
+$pw2 = md5($_POST['pw2']);
 $telephone = $_POST['telephone'];
 $address = $_POST['address'];
 $other = $_POST['other'];
