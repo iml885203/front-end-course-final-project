@@ -8,6 +8,10 @@ $(function(){
   var scrollIndex = 0;
   var scrollFinsh = 5;
   var $viewMulti = $('.view-multi');
+  var key_UP = 38;//UP
+  var key_RIGHT = 39;//RIGHT
+  var key_DOWN = 40;//DOWN
+  var key_LEFT = 37;//LEFT
 
   $window.on('load resize', function(){
     $('body').height(windowHeight = $(this).height());
@@ -26,7 +30,7 @@ $(function(){
   //按鍵控制
   $window.on('keyup', function(e){
     if(!$main.is(':animated')){
-      if(e.keyCode == 83){ //press S
+      if(e.keyCode == key_DOWN){ //press S
         console.log("press S");
         $main.children('.view.active').each(function(){
           if($(this).next('.view').length!=0){
@@ -39,7 +43,7 @@ $(function(){
           }
         });
       }
-      else if(e.keyCode == 87){ //press W
+      else if(e.keyCode == key_UP){ //press W
         console.log("press W");
         $main.children('.view.active').each(function(){
           if($(this).prev('.view').length!=0){
@@ -52,7 +56,7 @@ $(function(){
           }
         });
       }
-      else if(e.keyCode == 68){ //press D
+      else if(e.keyCode == key_RIGHT){ //press D
         console.log("press D");
         console.log($('.view-multi.active'));
         $('.view-multi.active .view-sub.active').each(function(){
@@ -67,7 +71,7 @@ $(function(){
           }
         });
       }
-      else if(e.keyCode == 65){ //press A
+      else if(e.keyCode == key_LEFT){ //press A
         console.log("press A");
         $('.view-multi.active .view-sub.active').each(function(){
           if($(this).prev('.view-sub').length!=0){
@@ -128,6 +132,56 @@ $(function(){
     return false;
   });
 
-  //
+  //mobile 滑動
+  var ts;
+  var isTouchStart = false;
+  $window.bind('touchstart', function (e){
+    ts = e.originalEvent.touches[0].clientY;
+    isTouchStart = true;
+    $main.css('overflow-y', 'auto');
+  });
+
+  $window.bind('touchmove', function (e){
+    if(isTouchStart){
+      var te = e.originalEvent.changedTouches[0].clientY;
+      if(ts > te+5){
+         //slide_down();
+         $main.css('overflow-y', 'hidden');
+         //scroll down
+         $main.children('.view.active').each(function(){
+           if($(this).next('.view').length!=0){
+             $(this).removeClass('active');
+             $(this).next('.view').addClass('active');
+             scrollHeight = ($(this).next('.view').index()) * windowHeight;
+             return false;
+           }
+         });
+
+      }else if(ts < te-5){
+         //slide_up();
+         $main.css('overflow-y', 'hidden');
+         //scroll up
+         $main.children('.view.active').each(function(){
+           $('.mobile-menu-button').slideToggle();
+           if($(this).prev('.view').length!=0){
+             $(this).removeClass('active');
+             $(this).prev('.view').addClass('active');
+             scrollHeight = ($(this).prev('.view').index()) * windowHeight;
+             return false;
+           }
+         });
+
+
+
+      }
+
+      $main.animate({scrollTop: scrollHeight}, 'slow');
+      isTouchStart = false;
+
+    }
+
+
+
+  });
 
 })

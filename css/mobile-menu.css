@@ -1,0 +1,103 @@
+.header {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  pointer-events: none;
+}
+/*================*/
+/*mobile button===*/
+/*================*/
+.mobile-menu-button {
+  display: inline-block;
+  transition: all 0.3s;
+  background-color: rgba(0, 0, 0, 0);
+  position: fixed;
+  z-index: 100;
+  height: 3em;
+  width: 3em;
+  top: 1em;
+  right: 1em;
+  pointer-events: auto;
+}
+.mobile-menu-button .bar {
+  background-color: black;
+  height: 3px;
+  width: 2em;
+  margin: auto;
+  display: block;
+  transition: all 0.3s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.mobile-menu-button .bar:before,
+.mobile-menu-button .bar:after {
+  background-color: black;
+  height: 3px;
+  width: 2em;
+  margin-bottom: 5px;
+  display: block;
+  transition: all 0.3s;
+  content: '';
+  position: absolute;
+  transition-property: top, transform;
+  -moz-transition-property: top, transform;
+  -webkit-transition-property: top, transform;
+}
+.mobile-menu-button.effect .bar:before,
+.mobile-menu-button.effect .bar:after {
+  transition-delay: 0s,0.3s;
+}
+.mobile-menu-button.effect .bar:before {
+  top: -10px;
+}
+.mobile-menu-button.effect .bar:after {
+  top: 10px;
+}
+.mobile-menu-button.active .bar {
+  background-color: rgba(0, 0, 0, 0);
+}
+.mobile-menu-button.active .bar:before,
+.mobile-menu-button.active .bar:after {
+  top: 0;
+  transition-delay: 0s,0.3s;
+}
+.mobile-menu-button.active .bar:before {
+  transform: rotate(45deg);
+}
+.mobile-menu-button.active .bar:after {
+  transform: rotate(-45deg);
+}
+/*================*/
+/*mobile menu=====*/
+/*================*/
+.mobile-menu {
+  width: 100%;
+  height: 100%;
+  background-color: #ececec;
+  position: fixed;
+  left: 100%;
+  z-index: 99;
+  opacity: 0;
+  transition: 0.5s;
+  top: 0;
+  pointer-events: auto;
+}
+/*================*/
+/*veil============*/
+/*================*/
+.veil {
+  display: none;
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.3);
+  pointer-events: auto;
+}
