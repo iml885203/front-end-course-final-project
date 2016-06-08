@@ -23,6 +23,7 @@
 }
 body{
   width: 100%;
+  overflow: hidden;
 }
 .main{
   width: 100%;
@@ -99,13 +100,33 @@ body{
 // ================
 // menu ===========
 // ================
-.menu{
-  position: fixed;
-  top: 0;
-  right: 0;
-  padding: 1em;
-  background-color: @backgorund-color;
-  color: white;
+.mobile-menu{
+  background-color: black !important;
+  ul{
+    height: 100%;
+    li{
+      text-align: center;
+      list-style-type: none;
+      height: 100%/6;
+      font-family: "Title Font";
+      font-size: 2em;
+      cursor: pointer;
+      transition: all .5s;
+      color: white;
+      &:before{
+        content:'';
+        width:0;
+        height:100%;
+        display:inline-block;
+        position:relative;
+        vertical-align:middle;
+        //background:#f00;
+      }
+      &:hover{
+        color: @main-color;
+      }
+    }
+  }
 }
 
 // ================
@@ -129,7 +150,11 @@ body{
       // background-color: @backgorund-color;
       padding: 3em 2em;
       text-align: center;
+      h1{
+
+      }
       span{
+        font-weight: 800;
         color: @main-color;
         color: rgba(0,0,0,0);
         transition: all 2s;
