@@ -14,4 +14,15 @@ $(function(){
       }
     });
   });
+  $(window).load(function(){
+    $lie = $('.slogan div h1 span');
+    var i = 0;
+    var showLie = function(){
+      var $this = $(this);
+      setTimeout(function(){
+        $this.css('color', '#da3b34');
+      },++i * 500);
+    }
+    $lie.each(showLie);
+  });
 });
