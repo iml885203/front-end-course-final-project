@@ -4,7 +4,7 @@ $(function(){
     if(!$(this).hasClass('active')){
       $('.mobile-menu').css({
         'opacity': '1',
-        'left': '50%'
+        'left': '0%'
       });
 
       $('body').css('overflowY', 'hidden');
@@ -18,11 +18,12 @@ $(function(){
   $('.veil').on('click', function() {
     $('.mobile-menu').css({
       'opacity': '0',
-      'left': '100%'
+      'left': '50%'
     });
 
     $('body').css('overflowY', 'auto');
     $('.veil').fadeOut();
     $('.mobile-menu-button').removeClass('active');
   });
+
 });

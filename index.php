@@ -8,7 +8,7 @@
   </head>
   <link rel="stylesheet/less" href="css/index.less">
   <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/mobile-menu.css">
+  <link rel="stylesheet/less" href="css/mobile-menu.less">
   <link rel="stylesheet" href="css/jquery.fullPage.css" />
   <body>
     <!-- header -->
@@ -29,7 +29,7 @@
 
       </div>
       <!-- post page -->
-      <div class="section">
+      <div class="section menu-button-white">
         <?php include 'layout/post.html'; ?>
       </div>
       <!-- contactUs page -->
