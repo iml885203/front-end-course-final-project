@@ -26,7 +26,6 @@
       <!-- truth page -->
       <div class="section">
         <?php include 'layout/truth.html'; ?>
-        
       </div>
       <!-- post page -->
       <div class="section menu-button-white">
