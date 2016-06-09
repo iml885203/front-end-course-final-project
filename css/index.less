@@ -139,8 +139,9 @@ body{
       filter: grayscale(1);
       -webkit-filter: grayscale(1);
     }
-
   }
+
+
   .slogan{
     display:flex;
     align-items:center;
@@ -177,14 +178,28 @@ body{
 // about page =====
 // ================
 .about{
-  .background{
+  position: relative;
+  .background{}
+
+  .mask{
+    top:0;
+    left: 0;
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 50%;
+    height: 100%;
   }
+
   .slogan{
+    width: 100%;
+    position: absolute;
+    z-index: 2;
     display:flex;
     align-items:center;
     justify-content: space-around;
     padding: 0px 3em;
-    div{
+    .icon{
       padding: 3em 2em;
       text-align: center;
       font-weight: bold;
@@ -193,8 +208,10 @@ body{
         height: 150px;
       }
       span{
-        //font-weight: 800;
         color: @main-color;
+      }
+      @media @mobile{
+        display: none;
       }
     }
   }
