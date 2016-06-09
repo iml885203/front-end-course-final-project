@@ -8,38 +8,38 @@
     </div>
   </div>
   <div class="post-form">
-    <form action="" class="form-horizontal ">
+    <form action="php-mysql/post.php" class="form-horizontal" method="POST">
       <div class="form-group">
         <labe class="col-md-2 col-sm-2 col-xs-12 control-label">標題</labe>
         <div class="col-md-4 col-sm-4 col-xs-6">
-          <input type="text" name="" id="" class="form-control" placeholder="標題">
+          <input type="text" name="title" id="" class="form-control" placeholder="標題">
         </div>
       </div>
       <div class="form-group">
         <labe class="col-md-2 col-sm-2 col-xs-12 control-label">新聞網址</labe>
         <div class="col-md-10 col-sm-10 col-xs-12">
-          <input type="text" name="" id="" class="form-control" placeholder="http://">
+          <input type="text" name="url" id="" class="form-control" placeholder="http://">
         </div>
       </div>
       <div class="form-group">
         <labe class="col-md-2 col-sm-2 col-xs-12 control-label">真相內容</labe>
         <div class="col-md-10 col-sm-10 col-xs-12">
-          <textarea name="name" rows="3" class="form-control" placeholder="內容"></textarea>
+          <textarea name="content" id="" rows="3" class="form-control" placeholder="內容"></textarea>
         </div>
       </div>
       <div class="form-group">
         <labe class="col-md-2 col-sm-2 col-xs-12 control-label">真相圖片</labe>
         <div class="col-md-10 col-sm-10 col-xs-12">
-          <input type="text" name="" id="" class="form-control" placeholder="po文要附圖">
+          <input type="text" name="imageurl" id="" class="form-control" placeholder="po文要附圖">
         </div>
       </div>
       <div class="form-group">
         <labe class="col-md-2 col-sm-2 col-xs-12 control-label">主題</labe>
         <div class="col-md-4 col-sm-4 col-xs-6">
-          <select class="form-control" name="">
-            <option value="volvo">瘟腥</option>
-            <option value="saab">驚悚</option>
-            <option value="opel">歡樂</option>
+          <select class="form-control" name="kind" id="">
+            <option value="0">瘟腥</option>
+            <option value="1">驚悚</option>
+            <option value="2">歡樂</option>
 
           </select>
         </div>
