@@ -71,7 +71,9 @@ $(function(){
   });
 
   $('.contactUs .member').mouseenter(function(){
-    $(this).animate({height:"100%"},'slow');
+    if(!$(this).is(":animated")){
+      $(this).animate({height:"100%"},'slow');
+    }
     var index = $(this).index();
     $(this).children('.memberPic').attr("src","images/memberPic" + index + ".png");
     //等待放入--紹安：memberPic1.png/育舒：memberPic2.png/育隆：memberPic3.png
