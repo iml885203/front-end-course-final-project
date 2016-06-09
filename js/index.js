@@ -73,21 +73,8 @@ $(function(){
   $('.contactUs .member').mouseenter(function(){
     $(this).animate({height:"100%"},'slow');
     var index = $(this).index();
-    if(index == 4){
-      $(this).children('.memberPic').attr("src","images/PingRu.png");
-    }
-    else if(index == 3){
-      $(this).children('.memberPic').attr("src","images/PingRu.png");
-      //育隆
-    }
-    else if(index == 2){
-      $(this).children('.memberPic').attr("src","images/PingRu.png");
-      //育舒
-    }
-    else if(index == 1){
-      $(this).children('.memberPic').attr("src","images/PingRu.png");
-      //紹安
-    }
+    $(this).children('.memberPic').attr("src","images/memberPic" + index + ".png");
+    //等待放入--紹安：memberPic1.png/育舒：memberPic2.png/育隆：memberPic3.png
   });
   $('.contactUs .member').mouseleave(function(){
     $(this).animate({height:"50%"},'slow');
