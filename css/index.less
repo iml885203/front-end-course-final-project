@@ -191,32 +191,66 @@ body{
     height: 100%;
   }
 
-  .slogan {
-    width: 100%;
+  .context{
     position: absolute;
     z-index: 2;
-    display:flex;
-    align-items:center;
-    justify-content: space-around;
-    padding: 0px 3em;
-    .icon{
-      padding: 3em 2em;
-      text-align: center;
-      font-weight: bold;
-      img{
-        width: 250px;
-        height: 150px;
+    width: 100%;
+    .slogan, .circuit{
+      display:flex;
+      align-items:center;
+      justify-content: space-around;
+      padding: 0px 3em;
+      .icon{
+        padding: 3em 2em;
+        text-align: center;
+        font-weight: bold;
+        img{
+          width: 250px;
+          height: 150px;
+        }
+        span{
+          color: @main-color;
+        }
+        @media @mobile{
+          display: none;
+        }
       }
-      span{
-        color: @main-color;
-      }
+    }
+    .circuit{
       @media @mobile{
-        display: none;
+        padding-top: 1em;
+      }
+      padding-top: 3em;
+      padding-left: 10%;
+      padding-right:10%;
+      div{
+        @media @mobile{
+          width: 40%;
+        }
+        position: relative;
+        width: 15%;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+        p{
+          position: absolute;
+          font-weight: bold;
+          top: 45%;
+          left: 35%;
+          z-index: 3;
+        }
+      }
+      div:hover{
+              -webkit-filter:brightness(1.2);
+              cursor: pointer;
+      }
+      img{
+        width: 10%;
+        height: 10%;
       }
     }
   }
-
-
 }
 // ================
 // truth page =====
@@ -279,3 +313,26 @@ body{
 // ================
 // contactUs page =
 // ================
+.contactUs{
+  clear: both;
+  .background{
+  }
+  .member{
+    float: left;
+    display: inline;
+    background-color: gray;
+    width: 22.5%;
+    height: 50%;
+    margin-left: 2%;
+    .memberPic{
+      width: 80%;
+      margin-left: 10%;
+    }
+    div{
+      text-align: center;
+      font-family: "微軟正黑體";
+      font-size: 3em;
+      color: white;
+    }
+  }
+}
