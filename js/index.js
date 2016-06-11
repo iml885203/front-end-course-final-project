@@ -84,13 +84,14 @@ $(function(){
   $('.contactUs .member').mouseenter(function(){
     if(!$(this).is(":animated")){
       $(this).animate({height:"100%"},'slow');
+      $(this).children('.intro').addClass("showIntro");
     }
     var index = $(this).index();
     $(this).children('.memberPic').attr("src","images/memberPic" + index + ".png");
-    //等待放入--紹安：memberPic1.png/育舒：memberPic2.png/育隆：memberPic3.png
   });
   $('.contactUs .member').mouseleave(function(){
     $(this).animate({height:"50%"},'slow');
+    $(this).children('.intro').removeClass("showIntro");
     $(this).children('.memberPic').attr("src","images/testMember.png");
   });
 });
