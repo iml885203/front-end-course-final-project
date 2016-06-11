@@ -70,5 +70,27 @@ $(function(){
     $('.veil').click();
   });
 
-
+  /*關於頁面*/
+  /*流程圖連結*/
+  $('.about .circuit div').click(function(){
+     if($(this).attr("id") == 'ask'){
+           $.fn.fullpage.moveTo(4);
+     }
+     else{
+         $.fn.fullpage.moveTo(3);
+     }
+  });
+  /**/
+  $('.contactUs .member').mouseenter(function(){
+    if(!$(this).is(":animated")){
+      $(this).animate({height:"100%"},'slow');
+    }
+    var index = $(this).index();
+    $(this).children('.memberPic').attr("src","images/memberPic" + index + ".png");
+    //等待放入--紹安：memberPic1.png/育舒：memberPic2.png/育隆：memberPic3.png
+  });
+  $('.contactUs .member').mouseleave(function(){
+    $(this).animate({height:"50%"},'slow');
+    $(this).children('.memberPic').attr("src","images/testMember.png");
+  });
 });
