@@ -45,4 +45,5 @@
   <script type="text/javascript" src="js/mobile-menu.js"></script>
   <script type="text/javascript" src="js/jquery.fullPage.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript" src="js/fb.js"></script>
 </html>
