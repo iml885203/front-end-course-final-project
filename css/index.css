@@ -289,7 +289,7 @@ body {
   width: 100%;
 }
 .truth .content .left .image img {
-  width: 100%;
+  width: 80%;
 }
 .truth .content .right {
   width: 30%;
@@ -312,9 +312,6 @@ body {
   .truth .content .left .image {
     width: 100%;
     text-align: center;
-  }
-  .truth .content .left .image img {
-    width: 80%;
   }
 }
 .post .background img {
