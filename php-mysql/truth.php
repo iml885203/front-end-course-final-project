@@ -31,7 +31,7 @@
         <div class="content">
           <div class="left">
             <div class="title">
-              <h2>#<?php echo $row[0] ?> <?php echo $row[1] ?></h2>
+              <h3>#<?php echo $row[0] ?> <?php echo $row[1] ?></h>
               <h4><a href="<?php echo $row[2] ?>" target="_blank"><?php echo $row[2] ?></a></h4>
             </div>
             <div class="image">

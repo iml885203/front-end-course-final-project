@@ -77,6 +77,12 @@ body {
   border: white 1px solid;
   color: white;
 }
+.fp-controlArrow.fp-prev {
+  border-right-color: rgba(255, 255, 255, 0.5) !important;
+}
+.fp-controlArrow.fp-next {
+  border-left-color: rgba(255, 255, 255, 0.5) !important;
+}
 .form-control {
   background-color: rgba(255, 255, 255, 0.7) !important;
 }
@@ -302,7 +308,7 @@ body {
 }
 @media only screen and (max-width: 768px) {
   .truth .content {
-    margin: 0em 3.5em;
+    margin: 0em;
   }
   .truth .content .left,
   .truth .content .right {
@@ -310,8 +316,8 @@ body {
     float: left;
     padding: 0em 1em;
   }
-  .truth .content .left .image {
-    width: 100%;
+  .truth .content .left .image img {
+    max-height: 15em;
   }
 }
 .post .background img {

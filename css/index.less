@@ -90,6 +90,12 @@ body{
     color: white;
   }
 }
+.fp-controlArrow.fp-prev{
+  border-right-color: rgba(255,255,255,0.5) !important;
+}
+.fp-controlArrow.fp-next{
+  border-left-color: rgba(255,255,255,0.5) !important;
+}
 
 .form-control{
   background-color: rgba(255,255,255,0.7) !important;
@@ -344,7 +350,7 @@ body{
       clear: both;
     }
     @media @mobile{
-      margin: 0em 3.5em;
+      margin: 0em;
       .left, .right{
         width: 100%;
         float: left;
@@ -352,7 +358,9 @@ body{
       }
       .left{
         .image{
-          width: 100%;
+          img{
+            max-height: 15em;
+          }
 
 
         }
