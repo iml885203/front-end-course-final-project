@@ -24,8 +24,9 @@
         <?php include 'layout/about.html'; ?>
       </div>
       <!-- truth page -->
-      <div class="section">
-        <?php include 'layout/truth.html'; ?>
+      <div class="section menu-button-white">
+        <?php include 'php-mysql/truth.php'; ?>
+        <?php //include 'layout/truth.html'; ?>
       </div>
       <!-- post page -->
       <div class="section menu-button-white">

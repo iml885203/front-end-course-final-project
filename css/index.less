@@ -266,8 +266,101 @@ body{
 // ================
 // truth page =====
 // ================
-.slide{
-  background-color: @main-color;
+.fp-slides{
+  //background-color: @main-color;
+    top: -20px;
+
+}
+
+.truth{
+  width: 100%;
+  height: 80%;
+
+  .background{
+    transition: all 1s;
+    &.yellow{
+      background-color: #dec646;
+    }
+    &.gray{
+      background-color: #525252;
+    }
+    &.green{
+      background-color: #54cc84;
+    }
+  }
+  .content{
+    div, a{
+      transition: all 2s;
+    }
+    &.yellow{
+      div, a{
+        color: #8c7e34;
+      }
+    }
+    &.gray{
+      div, a{
+        color: white;
+      }
+    }
+    &.green{
+      div, a{
+        color: black;
+      }
+    }
+
+    //width: 100%;
+    // height: 100%;
+    margin: 0em 5em;
+    //box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.5);
+    .left, .right{
+
+      height: 100%;
+      padding: 3em 1em;
+
+    }
+    .left{
+      width: 70%;
+      // background-color: green;
+      float: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      .image{
+        width: 100%;
+        img{
+          width: 100%;
+        }
+      }
+    }
+    .right{
+      width: 30%;
+      // background-color: blue;
+      float: right;
+      word-break: break-all;
+    }
+    .clear{
+      clear: both;
+    }
+    @media @mobile{
+      margin: 0em 3.5em;
+      .left, .right{
+        width: 100%;
+        float: left;
+        padding: 0em 1em;
+      }
+      .left{
+        .image{
+          width: 100%;
+          text-align: center;
+          img{
+            width: 80%;
+          }
+        }
+      }
+    }
+  }
+
 }
 // ================
 // post page ======
@@ -277,6 +370,8 @@ body{
     img{
       // filter: blur(5px);
       // -webkit-filter: blur(5px);
+      filter: grayscale(1);
+      -webkit-filter: grayscale(1);
     }
 
   }

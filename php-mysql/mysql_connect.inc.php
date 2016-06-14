@@ -1,10 +1,4 @@
-﻿<html>
- <head>
-  <title>首頁</title>
- </head>
- <body>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<?php
+﻿<?php
 //資料庫設定
 //資料庫位置
 $db_server = "localhost";
@@ -26,5 +20,3 @@ mysql_query("SET NAMES utf8");
 if(!@mysql_select_db($db_name))
         die("無法使用資料庫");
 ?>
- </body>
-</html>
