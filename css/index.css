@@ -294,7 +294,7 @@ body {
 .truth .content .right {
   width: 30%;
   float: right;
-  word-break: break-all;
+  word-break: break-all !important;
 }
 .truth .content .clear {
   clear: both;
