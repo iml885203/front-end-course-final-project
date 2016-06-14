@@ -39,9 +39,8 @@
 
     </div>
   </body>
-  <script type="text/javascript" src="js/less.min.js"></script>
+  <!-- <script type="text/javascript" src="js/less.min.js"></script> -->
   <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
   <!-- <script type="text/javascript" src="js/fullControl.js"></script> -->
   <script type="text/javascript" src="js/mobile-menu.js"></script>
   <script type="text/javascript" src="js/jquery.fullPage.js"></script>
