@@ -6,9 +6,9 @@
     <link rel="icon" href="images/icon.png" type="image/png" sizes="32x32">
     <title>再說</title>
   </head>
-  <link rel="stylesheet/less" href="css/index.less">
+  <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet/less" href="css/mobile-menu.less">
+  <link rel="stylesheet" href="css/mobile-menu.css">
   <link rel="stylesheet" href="css/jquery.fullPage.css" />
   <body>
     <!-- header -->

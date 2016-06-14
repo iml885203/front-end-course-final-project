@@ -47,6 +47,16 @@
   -moz-transition-property: top, transform;
   -webkit-transition-property: top, transform;
 }
+.mobile-menu-button .bar:after {
+  transition: all 0.6s;
+}
+.mobile-menu-button.white .bar {
+  background-color: white;
+}
+.mobile-menu-button.white .bar:before,
+.mobile-menu-button.white .bar:after {
+  background-color: white;
+}
 .mobile-menu-button.effect .bar:before,
 .mobile-menu-button.effect .bar:after {
   transition-delay: 0s,0.3s;

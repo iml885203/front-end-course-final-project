@@ -1,0 +1,421 @@
+@font-face {
+  font-family: "Title Font";
+  src: url("../fonts/titleFont.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  font-family: Arial;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  width: 100%;
+  overflow: hidden;
+}
+.main {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.main .view {
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+}
+.main .view.view-multi {
+  background-color: blue;
+}
+.main .view.view-multi .view-sub {
+  height: 100%;
+  float: left;
+}
+.main .view-red {
+  background-color: rgba(0, 0, 0, 0);
+}
+.main .view-green {
+  background-color: green;
+}
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.background img {
+  width: 100%;
+  height: 100%;
+}
+@media only screen and (max-width: 768px) {
+  .background img {
+    width: 200%;
+    left: -50%;
+    position: relative;
+  }
+}
+.home,
+.about,
+.trust,
+.post,
+.register,
+.contactUs {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.btn.btn-default {
+  background-color: #da3b34;
+  border: #da3b34 1px solid;
+  color: white;
+}
+.btn.btn-default:hover {
+  background-color: #da3b34;
+  border: white 1px solid;
+  color: white;
+}
+.form-control {
+  background-color: rgba(255, 255, 255, 0.7) !important;
+}
+.form-control:focus {
+  border: #da3b34 2px solid !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+.mobile-menu {
+  background-color: black !important;
+}
+.mobile-menu ul {
+  height: 100%;
+}
+.mobile-menu ul li {
+  text-align: center;
+  list-style-type: none;
+  height: 16.66666667%;
+  font-family: "Title Font";
+  font-size: 2em;
+  cursor: pointer;
+  transition: all .5s;
+  color: white;
+}
+.mobile-menu ul li:before {
+  content: '';
+  width: 0;
+  height: 100%;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+}
+.mobile-menu ul li:hover {
+  color: #da3b34;
+}
+.home .background img {
+  filter: grayscale(1);
+  -webkit-filter: grayscale(1);
+}
+.home .slogan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.home .slogan div {
+  padding: 3em 2em;
+  text-align: center;
+}
+.home .slogan div span {
+  font-weight: 800;
+  color: #da3b34;
+  color: rgba(0, 0, 0, 0);
+  transition: all 2s;
+}
+.home .control-image {
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
+}
+.home .control-image img {
+  width: 4em;
+}
+.about {
+  position: relative;
+}
+.about .mask {
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 50%;
+  height: 100%;
+}
+.about .context {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+}
+.about .context .slogan,
+.about .context .circuit {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0px 3em;
+}
+.about .context .slogan .icon,
+.about .context .circuit .icon {
+  padding: 3em 2em;
+  text-align: center;
+  font-weight: bold;
+}
+.about .context .slogan .icon img,
+.about .context .circuit .icon img {
+  width: 250px;
+  height: 150px;
+}
+.about .context .slogan .icon span,
+.about .context .circuit .icon span {
+  color: #da3b34;
+}
+@media only screen and (max-width: 768px) {
+  .about .context .slogan .icon,
+  .about .context .circuit .icon {
+    display: none;
+  }
+}
+.about .context .slogan .icon.icon-white,
+.about .context .circuit .icon.icon-white {
+  color: white;
+}
+.about .context .slogan .icon.icon-white span,
+.about .context .circuit .icon.icon-white span {
+  color: #f0635c;
+}
+.about .context .circuit {
+  padding-top: 3em;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+@media only screen and (max-width: 768px) {
+  .about .context .circuit {
+    padding-top: 1em;
+  }
+}
+.about .context .circuit div {
+  position: relative;
+  width: 15%;
+}
+@media only screen and (max-width: 768px) {
+  .about .context .circuit div {
+    width: 40%;
+  }
+}
+.about .context .circuit div img {
+  width: 100%;
+  height: 100%;
+}
+.about .context .circuit div p {
+  position: absolute;
+  font-weight: bold;
+  top: 45%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 3;
+}
+.about .context .circuit div:hover {
+  -webkit-filter: brightness(1.2);
+  filter: brightness(1.2);
+  cursor: pointer;
+}
+.about .context .circuit img {
+  width: 10%;
+  height: 10%;
+}
+.fp-slides {
+  top: -20px;
+}
+.truth {
+  width: 100%;
+  height: 80%;
+}
+.truth .background {
+  transition: all 1s;
+}
+.truth .background.yellow {
+  background-color: #dec646;
+}
+.truth .background.gray {
+  background-color: #525252;
+}
+.truth .background.green {
+  background-color: #54cc84;
+}
+.truth .content {
+  margin: 0em 5em;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.truth .content div,
+.truth .content a {
+  transition: all 2s;
+}
+.truth .content.yellow div,
+.truth .content.yellow a {
+  color: #8c7e34;
+}
+.truth .content.gray div,
+.truth .content.gray a {
+  color: white;
+}
+.truth .content.green div,
+.truth .content.green a {
+  color: black;
+}
+.truth .content .left,
+.truth .content .right {
+  height: 100%;
+  padding: 3em 1em;
+}
+.truth .content .left {
+  width: 70%;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.truth .content .left .image {
+  width: 100%;
+}
+.truth .content .left .image img {
+  width: 100%;
+}
+.truth .content .right {
+  width: 30%;
+  float: right;
+  word-break: break-all;
+}
+.truth .content .clear {
+  clear: both;
+}
+@media only screen and (max-width: 768px) {
+  .truth .content {
+    margin: 0em 3.5em;
+  }
+  .truth .content .left,
+  .truth .content .right {
+    width: 100%;
+    float: left;
+    padding: 0em 1em;
+  }
+  .truth .content .left .image {
+    width: 100%;
+    text-align: center;
+  }
+  .truth .content .left .image img {
+    width: 80%;
+  }
+}
+.post .background img {
+  filter: grayscale(1);
+  -webkit-filter: grayscale(1);
+}
+.post .bigtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 20%;
+  text-align: center;
+}
+.post .bigtitle div {
+  font-size: 5em;
+  font-family: "Title Font";
+  color: white;
+}
+@media only screen and (max-width: 768px) {
+  .post .bigtitle div {
+    font-size: 2.5em;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .post .bigtitle {
+    height: 10%;
+  }
+}
+.post .post-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80%;
+}
+.post .post-form form {
+  max-width: 700px;
+  width: 700px;
+  color: white;
+  padding: 0em 2em;
+}
+@media only screen and (max-width: 768px) {
+  .post .post-form {
+    height: 90%;
+  }
+}
+.contactUs {
+  clear: both;
+}
+.contactUs .member {
+  float: left;
+  display: inline;
+  background-color: gray;
+  width: 22.5%;
+  height: 50%;
+  margin-left: 2%;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+.contactUs .member .memberPic {
+  width: 80%;
+  margin-left: 10%;
+}
+.contactUs .member .memberName {
+  text-align: center;
+  font-family: "微軟正黑體";
+  font-size: 2.5em;
+  color: white;
+  margin-top: 5%;
+}
+@media only screen and (max-width: 768px) {
+  .contactUs .member .memberName {
+    font-size: 1.5em;
+  }
+}
+.contactUs .member .intro {
+  height: 40%;
+  font-family: "微軟正黑體";
+  font-size: 1.5em;
+  color: white;
+  display: none;
+  margin: 20%;
+}
+@media only screen and (max-width: 768px) {
+  .contactUs .member .intro {
+    font-size: 0.75em;
+  }
+}
+.contactUs .member .showIntro {
+  display: block;
+}
+.contactUs .contact {
+  position: absolute;
+  bottom: 0;
+  height: 50%;
+  width: 100%;
+}
+.contactUs .contact div {
+  text-align: center;
+  font-family: "微軟正黑體";
+  font-size: 3em;
+  color: black;
+}
