@@ -57,13 +57,15 @@ function statusChangeCallback(response) {
     // FB.api('/me', function(response) {
     //   console.log('Successful login for: ' + response.name);
     // });
-    $('#fb_button').text('Logout').unbind('click', fb_login).bind('click', fb_logout);
+    $('#fb_button').unbind('click', fb_login).bind('click', fb_logout);
+    $('#fb_button span').text('Logout');
   } else if (response.status === 'not_authorized') {
 
   }
   else{
     // console.log('notLogin');
-    $('#fb_button').text('Login').unbind('click', fb_logout).bind('click', fb_login);
+    $('#fb_button').unbind('click', fb_logout).bind('click', fb_login);
+    $('#fb_button span').text('Login');
   }
 }
 
@@ -75,11 +77,13 @@ function checkLoginState() {
 
 function fb_login(){
   FB.login(function(response) {
-    checkLoginState();
+    location.reload();
+
   });
 }
 function fb_logout(){
   FB.logout(function(response) {
-    checkLoginState();
+    location.reload();
+
   });
 }
