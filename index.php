@@ -38,6 +38,7 @@
       </div>
 
     </div>
+    <?php include 'layout/fb_comment.php'; ?>
   </body>
   <!-- <script type="text/javascript" src="js/less.min.js"></script> -->
   <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
@@ -46,4 +47,5 @@
   <script type="text/javascript" src="js/jquery.fullPage.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
   <script type="text/javascript" src="js/fb.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </html>

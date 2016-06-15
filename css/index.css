@@ -77,6 +77,12 @@ body {
   border: white 1px solid;
   color: white;
 }
+.btn.btn-primary {
+  background-color: #354c8c;
+}
+.btn.btn-primary:hover {
+  background-color: #354c8c;
+}
 .fp-controlArrow.fp-prev {
   border-right-color: rgba(255, 255, 255, 0.5) !important;
 }
@@ -309,6 +315,9 @@ body {
   float: right;
   word-break: break-all !important;
 }
+.truth .content .right .fb-mobile {
+  display: none;
+}
 .truth .content .clear {
   clear: both;
 }
@@ -321,6 +330,18 @@ body {
     width: 100%;
     float: left;
     padding: 0em 1em;
+  }
+  .truth .content .left {
+    padding: 0em 1em;
+  }
+  .truth .content .right {
+    padding: 1em 1em;
+  }
+  .truth .content .right .fb-computer {
+    display: none;
+  }
+  .truth .content .right .fb-mobile {
+    display: inline-block;
   }
 }
 .post .background img {

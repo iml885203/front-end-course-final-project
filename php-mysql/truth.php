@@ -4,9 +4,11 @@
   $sql = "SELECT * FROM post ORDER BY id DESC LIMIT $limit_count";
   $result = mysql_query($sql);
 
+  $idarray = array();
 
   while($row = mysql_fetch_row($result))
   {
+    array_push($idarray, $row[0]);
 ?>
     <div class="slide">
 
@@ -43,7 +45,15 @@
             <?php echo $row[3].'<br>' ?>
             <div class="fb-like" data-href="http://lguo.ddns.net/final-project/index.php#<?php echo $row[0] ?>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
 
-            <div class="fb-comments" data-href="http://lguo.ddns.net/final-project/index.php#<?php echo $row[0] ?>" data-width="auto" data-numposts="5"></div>
+            <!-- comment -->
+            <div class="fb-comments fb-computer" data-href="http://lguo.ddns.net/final-project/index.php#<?php echo $row[0] ?>" data-width="auto" data-numposts="1" data-mobile="true"></div>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary btn-xs fb-mobile" data-toggle="modal" data-target="#myModal<?php echo $row[0] ?>">
+              留言
+            </button>
+
+
           </div>
           <div class="clear">
 
