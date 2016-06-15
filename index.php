@@ -10,13 +10,18 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/mobile-menu.css">
   <link rel="stylesheet" href="css/jquery.fullPage.css" />
+  <link rel='stylesheet' href='css/nprogress.css'/>
+  <script src='js/nprogress.js'></script>
   <body>
     <!-- header -->
     <?php include 'layout/header.html'; ?>
+    <!-- loading page -->
+    <?php include 'layout/loading.html'; ?>
     <!-- main -->
     <div id="fullpage">
+
       <!-- home page -->
-      <div class="section active">
+      <div class="section">
         <?php include 'layout/home.html'; ?>
       </div>
       <!-- about page -->
@@ -48,4 +53,5 @@
   <script type="text/javascript" src="js/index.js"></script>
   <script type="text/javascript" src="js/fb.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
 </html>

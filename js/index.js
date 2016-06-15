@@ -84,6 +84,7 @@ $(function(){
     else{
       $('.image').height($(window).height()/3);
     }
+    loadingResize();
   });
 
   $(window).resize(function(){
@@ -93,6 +94,7 @@ $(function(){
     else{
       $('.image').height($(window).height()/3);
     }
+    loadingResize();
   });
 
   $('.mobile-menu ul li').click(function(){
@@ -144,7 +146,18 @@ $(function(){
         return;
       }
     });
-
-
   }
+
+  // nprogress
+  $(window).load(function(){
+    NProgress.start();
+  });
+
+  //loading
+  function loadingResize(){
+    $('.loading').width($(window).width());
+    $('.loading').height($(window).height());
+  }
+
+
 });
