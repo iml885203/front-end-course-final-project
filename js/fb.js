@@ -7,17 +7,19 @@ window.fbAsyncInit = function() {
   });
   checkLoginState();
   // fbApiInit = true; //init flag
-  FB.getLoginStatus(function(response){
-      fbApiInit = true;
-  });
+  // FB.getLoginStatus(function(response){
+  //     fbApiInit = true;
+  // });
   var loadcount = 0;
   FB.Event.subscribe('xfbml.render', function(response){
     console.log('xfbml load');
     loadcount++;
+    homePageReset();
     if(loadcount == 2){
       NProgress.done();
       $('.loading .background').css('opacity', '0');
       $('.loading').css('transform', 'translateY(-100%)');
+      homePageShow();
     }
 
   });
@@ -81,24 +83,3 @@ function fb_logout(){
     checkLoginState();
   });
 }
-
-function fbEnsureInit(callback) {
-  if(!window.fbApiInit) {
-    setTimeout(function() {fbEnsureInit(callback);}, 50);
-  } else {
-    if(callback) {
-        callback();
-    }
-  }
-}
-
-
-$(function(){
-  window.onload = function() {
-    console.log('window loaded');
-  }
-  fbEnsureInit(function() {
-    console.log("this will be run once FB is initialized");
-  });
-
-});

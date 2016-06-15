@@ -7,8 +7,8 @@
 * {
   font-family: Arial;
   box-sizing: border-box;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 body {
   width: 100%;
@@ -56,12 +56,12 @@ body {
     position: relative;
   }
 }
-.home,
 .about,
-.trust,
+.contactUs,
+.home,
 .post,
 .register,
-.contactUs {
+.trust {
   position: relative;
   width: 100%;
   height: 100%;
@@ -109,7 +109,7 @@ body {
   font-family: "Title Font";
   font-size: 2em;
   cursor: pointer;
-  transition: all .5s;
+  transition: all 0.5s;
   color: white;
 }
 .mobile-menu ul li:before {
@@ -147,6 +147,26 @@ body {
 .loading .background img {
   filter: grayscale(1);
   -webkit-filter: grayscale(1);
+}
+.loading .loadingImg {
+  -webkit-animation: rotateimage 2s linear infinite;
+  animation: rotateimage 2s linear infinite;
+}
+@-webkit-keyframes rotateimage {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes rotateimage {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 .home .background img {
   filter: grayscale(1);
@@ -194,40 +214,55 @@ body {
   z-index: 2;
   width: 100%;
 }
-.about .context .slogan,
-.about .context .circuit {
+.about .context .circuit,
+.about .context .slogan {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 0px 3em;
+  padding: 0 3em;
 }
-.about .context .slogan .icon,
-.about .context .circuit .icon {
+.about .context .circuit .icon,
+.about .context .slogan .icon {
   padding: 3em 2em;
   text-align: center;
   font-weight: bold;
 }
-.about .context .slogan .icon img,
-.about .context .circuit .icon img {
+.about .context .circuit .icon img,
+.about .context .slogan .icon img {
   width: 250px;
   height: 150px;
 }
-.about .context .slogan .icon span,
-.about .context .circuit .icon span {
-  color: #da3b34;
+@media only screen and (max-width: 768px) {
+  .about .context .circuit .icon img,
+  .about .context .slogan .icon img {
+    width: 150px;
+    height: 100px;
+  }
 }
 @media only screen and (max-width: 768px) {
-  .about .context .slogan .icon,
-  .about .context .circuit .icon {
+  .about .context .circuit .icon h2,
+  .about .context .slogan .icon h2 {
     display: none;
   }
 }
-.about .context .slogan .icon.icon-white,
-.about .context .circuit .icon.icon-white {
+.about .context .circuit .icon span,
+.about .context .slogan .icon span {
+  color: #da3b34;
+}
+.about .context .circuit .icon.icon-white,
+.about .context .slogan .icon.icon-white {
   color: white;
 }
-.about .context .slogan .icon.icon-white span,
-.about .context .circuit .icon.icon-white span {
+.about .context .circuit .icon.icon-white span,
+.about .context .slogan .icon.icon-white span {
+  color: #f0635c;
+}
+.about .context .circuit .icon.icon-white,
+.about .context .slogan .icon.icon-white {
+  color: white;
+}
+.about .context .circuit .icon.icon-white span,
+.about .context .slogan .icon.icon-white span {
   color: #f0635c;
 }
 .about .context .circuit {
@@ -291,23 +326,23 @@ body {
   background-color: #54cc84;
 }
 .truth .content {
-  margin: 0em 5em;
+  margin: 0 5em;
   background-color: rgba(255, 255, 255, 0.5);
 }
-.truth .content div,
-.truth .content a {
+.truth .content a,
+.truth .content div {
   transition: all 2s;
 }
-.truth .content.yellow div,
-.truth .content.yellow a {
+.truth .content.yellow a,
+.truth .content.yellow div {
   color: #8c7e34;
 }
-.truth .content.gray div,
-.truth .content.gray a {
+.truth .content.gray a,
+.truth .content.gray div {
   color: white;
 }
-.truth .content.green div,
-.truth .content.green a {
+.truth .content.green a,
+.truth .content.green div {
   color: black;
 }
 .truth .content .left,
@@ -342,19 +377,19 @@ body {
 }
 @media only screen and (max-width: 768px) {
   .truth .content {
-    margin: 0em;
+    margin: 0;
   }
   .truth .content .left,
   .truth .content .right {
     width: 100%;
     float: left;
-    padding: 0em 1em;
+    padding: 0 1em;
   }
   .truth .content .left {
-    padding: 0em 1em;
+    padding: 0 1em;
   }
   .truth .content .right {
-    padding: 1em 1em;
+    padding: 1em;
   }
   .truth .content .right .fb-computer {
     display: none;
@@ -401,7 +436,7 @@ body {
   max-width: 700px;
   width: 700px;
   color: white;
-  padding: 0em 2em;
+  padding: 0 2em;
 }
 @media only screen and (max-width: 768px) {
   .post .post-form {
@@ -462,10 +497,52 @@ body {
 .contactUs .contact div {
   text-align: center;
   font-family: "微軟正黑體";
+}
+.contactUs .contact div .memberPic {
+  width: 80%;
+  margin-left: 10%;
+}
+.contactUs .contact div .memberName {
+  text-align: center;
+  font-family: "微軟正黑體";
+  font-size: 2.5em;
+  color: white;
+  margin-top: 5%;
+}
+@media only screen and (max-width: 768px) {
+  .contactUs .contact div .memberName {
+    font-size: 1.5em;
+  }
+}
+.contactUs .contact div .intro {
+  height: 40%;
+  font-family: "微軟正黑體";
+  font-size: 1.5em;
+  color: white;
+  display: none;
+  margin: 20%;
+}
+@media only screen and (max-width: 768px) {
+  .contactUs .contact div .intro {
+    font-size: 0.75em;
+  }
+}
+.contactUs .contact div .showIntro {
+  display: block;
+}
+.contactUs .contact .contact {
+  position: absolute;
+  bottom: 0;
+  height: 50%;
+  width: 100%;
+}
+.contactUs .contact .contact div {
+  text-align: center;
+  font-family: "微軟正黑體";
   font-size: 3em;
   color: black;
 }
-.pace {
+.contactUs .pace {
   -webkit-pointer-events: none;
   pointer-events: none;
   -webkit-user-select: none;
@@ -480,10 +557,10 @@ body {
   height: 12px;
   background: #fff;
 }
-.pace-inactive {
+.contactUs .pace-inactive {
   display: none;
 }
-.pace .pace-progress {
+.contactUs .pace .pace-progress {
   background-color: #29d;
   position: fixed;
   top: 0;
@@ -492,7 +569,7 @@ body {
   width: 100%;
   overflow: hidden;
 }
-.pace .pace-activity {
+.contactUs .pace .pace-activity {
   position: fixed;
   top: 0;
   right: -32px;
