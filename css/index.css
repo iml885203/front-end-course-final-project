@@ -117,6 +117,12 @@ body {
 .mobile-menu ul li:hover {
   color: #da3b34;
 }
+.mobile-menu ul li span {
+  font-family: "Title Font";
+}
+.mobile-menu ul li img {
+  width: 2em;
+}
 .home .background img {
   filter: grayscale(1);
   -webkit-filter: grayscale(1);
@@ -296,7 +302,7 @@ body {
   text-align: center;
 }
 .truth .content .left .image img {
-  max-width: 80%;
+  height: 100%;
 }
 .truth .content .right {
   width: 30%;
@@ -315,9 +321,6 @@ body {
     width: 100%;
     float: left;
     padding: 0em 1em;
-  }
-  .truth .content .left .image img {
-    max-height: 15em;
   }
 }
 .post .background img {

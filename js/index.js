@@ -78,6 +78,21 @@ $(function(){
       });
     }
     // $.fn.fullpage.moveTo(3);
+    if($(window).width() >= 768){
+      $('.image').height($(window).height()/2);
+    }
+    else{
+      $('.image').height($(window).height()/3);
+    }
+  });
+
+  $(window).resize(function(){
+    if($(window).width() >= 768){
+      $('.image').height($(window).height()/2);
+    }
+    else{
+      $('.image').height($(window).height()/3);
+    }
   });
 
   $('.mobile-menu ul li').click(function(){
