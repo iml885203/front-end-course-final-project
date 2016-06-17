@@ -7,8 +7,8 @@
 * {
   font-family: Arial;
   box-sizing: border-box;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 body {
   width: 100%;
@@ -56,12 +56,12 @@ body {
     position: relative;
   }
 }
-.home,
 .about,
-.trust,
+.contactUs,
+.home,
 .post,
 .register,
-.contactUs {
+.trust {
   position: relative;
   width: 100%;
   height: 100%;
@@ -96,6 +96,9 @@ body {
   border: #da3b34 2px solid !important;
   background-color: rgba(255, 255, 255, 0.9) !important;
 }
+#fp-nav {
+  top: 20% !important;
+}
 .mobile-menu {
   background-color: black !important;
 }
@@ -109,7 +112,7 @@ body {
   font-family: "Title Font";
   font-size: 2em;
   cursor: pointer;
-  transition: all .5s;
+  transition: all 0.5s;
   color: white;
 }
 .mobile-menu ul li:before {
@@ -128,6 +131,45 @@ body {
 }
 .mobile-menu ul li img {
   width: 2em;
+}
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  transition: all 2s;
+}
+.loading .background {
+  transition: all 0.5s;
+}
+.loading .background img {
+  filter: grayscale(1);
+  -webkit-filter: grayscale(1);
+}
+.loading .loadingImg {
+  -webkit-animation: rotateimage 2s linear infinite;
+  animation: rotateimage 2s linear infinite;
+}
+@-webkit-keyframes rotateimage {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes rotateimage {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 .home .background img {
   filter: grayscale(1);
@@ -174,41 +216,61 @@ body {
   position: absolute;
   z-index: 2;
   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  -webkit-justify-content: center;
+   justify-content: center;
 }
-.about .context .slogan,
-.about .context .circuit {
+.about .context .circuit,
+.about .context .slogan {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 0px 3em;
+  padding: 0 3em;
 }
-.about .context .slogan .icon,
-.about .context .circuit .icon {
+.about .context .circuit .icon,
+.about .context .slogan .icon {
   padding: 3em 2em;
   text-align: center;
   font-weight: bold;
 }
-.about .context .slogan .icon img,
-.about .context .circuit .icon img {
+.about .context .circuit .icon img,
+.about .context .slogan .icon img {
   width: 250px;
   height: 150px;
 }
-.about .context .slogan .icon span,
-.about .context .circuit .icon span {
-  color: #da3b34;
+@media only screen and (max-width: 768px) {
+  .about .context .circuit .icon img,
+  .about .context .slogan .icon img {
+    width: 150px;
+    height: 100px;
+  }
 }
 @media only screen and (max-width: 768px) {
-  .about .context .slogan .icon,
-  .about .context .circuit .icon {
+  .about .context .circuit .icon h2,
+  .about .context .slogan .icon h2 {
     display: none;
   }
 }
-.about .context .slogan .icon.icon-white,
-.about .context .circuit .icon.icon-white {
+.about .context .circuit .icon span,
+.about .context .slogan .icon span {
+  color: #da3b34;
+}
+.about .context .circuit .icon.icon-white,
+.about .context .slogan .icon.icon-white {
   color: white;
 }
-.about .context .slogan .icon.icon-white span,
-.about .context .circuit .icon.icon-white span {
+.about .context .circuit .icon.icon-white span,
+.about .context .slogan .icon.icon-white span {
+  color: #f0635c;
+}
+.about .context .circuit .icon.icon-white,
+.about .context .slogan .icon.icon-white {
+  color: white;
+}
+.about .context .circuit .icon.icon-white span,
+.about .context .slogan .icon.icon-white span {
   color: #f0635c;
 }
 .about .context .circuit {
@@ -272,23 +334,23 @@ body {
   background-color: #54cc84;
 }
 .truth .content {
-  margin: 0em 5em;
+  margin: 0 5em;
   background-color: rgba(255, 255, 255, 0.5);
 }
-.truth .content div,
-.truth .content a {
+.truth .content a,
+.truth .content div {
   transition: all 2s;
 }
-.truth .content.yellow div,
-.truth .content.yellow a {
+.truth .content.yellow a,
+.truth .content.yellow div {
   color: #8c7e34;
 }
-.truth .content.gray div,
-.truth .content.gray a {
+.truth .content.gray a,
+.truth .content.gray div {
   color: white;
 }
-.truth .content.green div,
-.truth .content.green a {
+.truth .content.green a,
+.truth .content.green div {
   color: black;
 }
 .truth .content .left,
@@ -323,19 +385,19 @@ body {
 }
 @media only screen and (max-width: 768px) {
   .truth .content {
-    margin: 0em;
+    margin: 0;
   }
   .truth .content .left,
   .truth .content .right {
     width: 100%;
     float: left;
-    padding: 0em 1em;
+    padding: 0 1em;
   }
   .truth .content .left {
-    padding: 0em 1em;
+    padding: 0 1em;
   }
   .truth .content .right {
-    padding: 1em 1em;
+    padding: 1em;
   }
   .truth .content .right .fb-computer {
     display: none;
@@ -382,7 +444,7 @@ body {
   max-width: 700px;
   width: 700px;
   color: white;
-  padding: 0em 2em;
+  padding: 0 2em;
 }
 @media only screen and (max-width: 768px) {
   .post .post-form {
@@ -443,6 +505,149 @@ body {
 .contactUs .contact div {
   text-align: center;
   font-family: "微軟正黑體";
+}
+.contactUs .contact div .memberPic {
+  width: 80%;
+  margin-left: 10%;
+}
+.contactUs .contact div .memberName {
+  text-align: center;
+  font-family: "微軟正黑體";
+  font-size: 2.5em;
+  color: white;
+  margin-top: 5%;
+}
+@media only screen and (max-width: 768px) {
+  .contactUs .contact div .memberName {
+    font-size: 1.5em;
+  }
+}
+.contactUs .contact div .intro {
+  height: 40%;
+  font-family: "微軟正黑體";
+  font-size: 1.5em;
+  color: white;
+  display: none;
+  margin: 20%;
+}
+@media only screen and (max-width: 768px) {
+  .contactUs .contact div .intro {
+    font-size: 0.75em;
+  }
+}
+.contactUs .contact div .showIntro {
+  display: block;
+}
+.contactUs .contact .contact {
+  position: absolute;
+  bottom: 0;
+  height: 50%;
+  width: 100%;
+}
+.contactUs .contact .contact div {
+  text-align: center;
+  font-family: "微軟正黑體";
   font-size: 3em;
   color: black;
+}
+.contactUs .pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  width: 100%;
+  height: 12px;
+  background: #fff;
+}
+.contactUs .pace-inactive {
+  display: none;
+}
+.contactUs .pace .pace-progress {
+  background-color: #29d;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.contactUs .pace .pace-activity {
+  position: fixed;
+  top: 0;
+  right: -32px;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.2)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.2)), color-stop(0.75, rgba(255, 255, 255, 0.2)), color-stop(0.75, transparent), to(transparent));
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+  -webkit-background-size: 32px 32px;
+  -moz-background-size: 32px 32px;
+  -o-background-size: 32px 32px;
+  background-size: 32px 32px;
+  -webkit-animation: pace-theme-barber-shop-motion 500ms linear infinite;
+  -moz-animation: pace-theme-barber-shop-motion 500ms linear infinite;
+  -ms-animation: pace-theme-barber-shop-motion 500ms linear infinite;
+  -o-animation: pace-theme-barber-shop-motion 500ms linear infinite;
+  animation: pace-theme-barber-shop-motion 500ms linear infinite;
+}
+@-webkit-keyframes pace-theme-barber-shop-motion {
+  0% {
+    -webkit-transform: none;
+    transform: none;
+  }
+  100% {
+    -webkit-transform: translate(-32px, 0);
+    transform: translate(-32px, 0);
+  }
+}
+@-moz-keyframes pace-theme-barber-shop-motion {
+  0% {
+    -moz-transform: none;
+    transform: none;
+  }
+  100% {
+    -moz-transform: translate(-32px, 0);
+    transform: translate(-32px, 0);
+  }
+}
+@-o-keyframes pace-theme-barber-shop-motion {
+  0% {
+    -o-transform: none;
+    transform: none;
+  }
+  100% {
+    -o-transform: translate(-32px, 0);
+    transform: translate(-32px, 0);
+  }
+}
+@-ms-keyframes pace-theme-barber-shop-motion {
+  0% {
+    -ms-transform: none;
+    transform: none;
+  }
+  100% {
+    -ms-transform: translate(-32px, 0);
+    transform: translate(-32px, 0);
+  }
+}
+@keyframes pace-theme-barber-shop-motion {
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: translate(-32px, 0);
+  }
 }
