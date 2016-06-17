@@ -6,6 +6,23 @@ window.fbAsyncInit = function() {
     version: 'v2.6'
   });
   checkLoginState();
+  // fbApiInit = true; //init flag
+  // FB.getLoginStatus(function(response){
+  //     fbApiInit = true;
+  // });
+  var loadcount = 0;
+  FB.Event.subscribe('xfbml.render', function(response){
+    console.log('xfbml load');
+    loadcount++;
+    homePageReset();
+    if(loadcount == 2){
+      NProgress.done();
+      $('.loading .background').css('opacity', '0');
+      $('.loading').css('transform', 'translateY(-100%)');
+      homePageShow();
+    }
+
+  });
 };
 
 // (function(d, s, id) {
@@ -40,13 +57,15 @@ function statusChangeCallback(response) {
     // FB.api('/me', function(response) {
     //   console.log('Successful login for: ' + response.name);
     // });
-    $('#fb_button').text('Logout').unbind('click', fb_login).bind('click', fb_logout);
+    $('#fb_button').unbind('click', fb_login).bind('click', fb_logout);
+    $('#fb_button span').text('Logout');
   } else if (response.status === 'not_authorized') {
 
   }
   else{
     // console.log('notLogin');
-    $('#fb_button').text('Login').unbind('click', fb_logout).bind('click', fb_login);
+    $('#fb_button').unbind('click', fb_logout).bind('click', fb_login);
+    $('#fb_button span').text('Login');
   }
 }
 
@@ -58,11 +77,13 @@ function checkLoginState() {
 
 function fb_login(){
   FB.login(function(response) {
-    checkLoginState();
+    location.reload();
+
   });
 }
 function fb_logout(){
   FB.logout(function(response) {
-    checkLoginState();
+    location.reload();
+
   });
 }
