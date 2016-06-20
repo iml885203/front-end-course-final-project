@@ -1,6 +1,3 @@
-// ================
-// init ===========
-// ================
 @main-color: #da3b34;
 @second-color: #d52775;
 @backgorund-color: rgba(255, 255, 255, 0.7);
@@ -108,6 +105,9 @@ body {
     border: @main-color 2px solid !important;
     background-color: rgba(255, 255, 255, 0.9) !important;
   }
+}
+#fp-nav{
+  top: 20% !important;
 }
 // ================
 // menu ===========
@@ -246,27 +246,60 @@ body {
     position: absolute;
     z-index: 2;
     width: 100%;
+<<<<<<< HEAD
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    -webkit-justify-content: center;
+     justify-content: center;
+=======
+>>>>>>> a1bc2c80d151f68d2dc5b0c5f7b1b156759f4d2d
     .circuit,
-    .slogan {
+    .slogan,
+    .slogan-text {
       display: flex;
       align-items: center;
       justify-content: space-around;
-      padding: 0 3em;
+      padding: 0 0em;
+    }
+
+    .slogan{
+      .icon:hover{
+        transform: rotateY( 180deg );
+      }
       .icon {
+        /*new*/
+        transition: transform 1s;
+        transform-style: preserve-3d;
+        position: relative;
+        cursor:pointer;
+        /**/
         padding: 3em 2em;
         text-align: center;
         font-weight: bold;
         img {
-          width: 250px;
-          height: 150px;
+          /*new*/
+          backface-visibility: hidden;
+          position: absolute;
+          top:0px;
+          left:0px;
+          /**/
+          width: 270px;
+          height: 170px;
           @media @mobile {
             width: 150px;
             height: 100px;
+            top:3em;
+            left:2em;
           }
         }
         h2 {
+          backface-visibility: hidden;
+          transform: rotateY( 180deg );
+          top:0px;
+          left:0px;
           @media @mobile {
-            display: none;
+          font-size: 20px;
           }
         }
         span {
@@ -286,11 +319,28 @@ body {
         }
       }
     }
+    .slogan-text{
+      padding: 6em 0em;
+      div{
+        font-size: 30px;
+        font-weight: bold;
+        @media @mobile {
+        font-size: 15px;
+        }
+      }
+      .white-color{
+        color: white;
+      }
+      @media @mobile {
+      padding: 3em 0em;
+      }
+    }
+
     .circuit {
       @media @mobile {
         padding-top: 1em;
       }
-      padding-top: 3em;
+      padding-top: 5em;
       padding-left: 10%;
       padding-right: 10%;
       div {
@@ -660,6 +710,7 @@ body {
     100% {
       -o-transform: translate(-32px, 0);
       transform: translate(-32px, 0);
+<<<<<<< HEAD
     }
   }
   @-ms-keyframes pace-theme-barber-shop-motion {
@@ -672,6 +723,20 @@ body {
       transform: translate(-32px, 0);
     }
   }
+=======
+    }
+  }
+  @-ms-keyframes pace-theme-barber-shop-motion {
+    0% {
+      -ms-transform: none;
+      transform: none;
+    }
+    100% {
+      -ms-transform: translate(-32px, 0);
+      transform: translate(-32px, 0);
+    }
+  }
+>>>>>>> a1bc2c80d151f68d2dc5b0c5f7b1b156759f4d2d
   @keyframes pace-theme-barber-shop-motion {
     0% {
       transform: none;
