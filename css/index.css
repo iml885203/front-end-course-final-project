@@ -223,58 +223,102 @@ body {
    justify-content: center;
 }
 .about .context .circuit,
-.about .context .slogan {
+.about .context .slogan,
+.about .context .slogan-text {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 0 3em;
+  padding: 0 0em;
 }
-.about .context .circuit .icon,
 .about .context .slogan .icon {
   padding: 3em 2em;
   text-align: center;
   font-weight: bold;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  position: relative;
+  cursor:pointer;
 }
-.about .context .circuit .icon img,
 .about .context .slogan .icon img {
-  width: 250px;
-  height: 150px;
+  width: 270px;
+  height: 170px;
+  backface-visibility: hidden;
+  position: absolute;
+  top:0px;
+  left:0px;
+}
+.about .context .slogan .icon h2 {
+  backface-visibility: hidden;
+  transform: rotateY( 180deg );
+  top:0px;
+  left:0px;
 }
 @media only screen and (max-width: 768px) {
-  .about .context .circuit .icon img,
+  .about .context .slogan .icon h2 {
+    font-size: 20px;
+  }
+}
+.about .context .slogan .icon:hover{
+  transform: rotateY( 180deg );
+}
+@media only screen and (max-width: 768px) {
   .about .context .slogan .icon img {
     width: 150px;
     height: 100px;
+    top:3em;
+    left:2em;
   }
 }
-@media only screen and (max-width: 768px) {
-  .about .context .circuit .icon h2,
-  .about .context .slogan .icon h2 {
-    display: none;
-  }
-}
-.about .context .circuit .icon span,
 .about .context .slogan .icon span {
   color: #da3b34;
 }
-.about .context .circuit .icon.icon-white,
 .about .context .slogan .icon.icon-white {
+<<<<<<< HEAD
+=======
   color: white;
 }
-.about .context .circuit .icon.icon-white span,
 .about .context .slogan .icon.icon-white span {
   color: #f0635c;
 }
-.about .context .circuit .icon.icon-white,
+.about .context .slogan .icon.icon-white {
+>>>>>>> a1bc2c80d151f68d2dc5b0c5f7b1b156759f4d2d
+  color: white;
+}
+.about .context .slogan .icon.icon-white span {
+<<<<<<< HEAD
+  color: #f0635c;
+}
 .about .context .slogan .icon.icon-white {
   color: white;
 }
-.about .context .circuit .icon.icon-white span,
 .about .context .slogan .icon.icon-white span {
+=======
+>>>>>>> a1bc2c80d151f68d2dc5b0c5f7b1b156759f4d2d
   color: #f0635c;
+}
+.about .context .slogan-text{
+  padding: 6em 0em;
+}
+.about .context .slogan-text div{
+    font-size: 30px;
+    font-weight: bold;
+}
+@media only screen and (max-width: 768px) {
+  .about .context .slogan-text div{
+      font-size: 15px;
+  }
+}
+.about .context .slogan-text .white-color{
+  color: white;
+}
+
+@media only screen and (max-width: 768px) {
+    .about .context .slogan-text{
+        padding: 3em 0em;
+  }
 }
 .about .context .circuit {
-  padding-top: 3em;
+  padding-top: 5em;
   padding-left: 10%;
   padding-right: 10%;
 }
