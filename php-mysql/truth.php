@@ -1,7 +1,6 @@
 <?php
   include 'mysql_connect.inc.php';
-  $limit_count = 3;
-  $sql = "SELECT * FROM post ORDER BY id DESC LIMIT $limit_count";
+  $sql = "SELECT * FROM post ORDER BY id DESC";
   $result = mysql_query($sql);
 
   $idarray = array();
