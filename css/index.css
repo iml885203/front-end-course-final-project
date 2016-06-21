@@ -642,7 +642,6 @@ body {
   overflow: hidden;
 }
 
-<<<<<<< HEAD
 .contact form {
   width: 100%;
   height: 100%;
@@ -650,19 +649,13 @@ body {
   justify-content: center;
 }
 
-=======
->>>>>>> 245afc1a6a5f80f3b28df099ca52cee244b35d10
 .contact-form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;;
   align-items: center;
   width: 50%;
-<<<<<<< HEAD
   height: 100%;
-=======
-  height: 80%;
->>>>>>> 245afc1a6a5f80f3b28df099ca52cee244b35d10
 }
 @media only screen and (max-width: 768px) {
   .contact-form {
@@ -671,7 +664,6 @@ body {
   .contact-form .bigtitle {
     font-size: 0.5em;
   }
-<<<<<<< HEAD
 }
 
 .contact-form > div {
@@ -686,22 +678,6 @@ body {
     display: flex;
     flex-direction: column;
   }
-=======
-  .contact-form > div {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-.contact-form > div div {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-
-@media only screen and (max-width: 768px) {
->>>>>>> 245afc1a6a5f80f3b28df099ca52cee244b35d10
   .contact-form > div div {
     width: 100%;
     display: flex;
@@ -718,11 +694,6 @@ body {
 
 .contact-form input {
   width: 100%;
-<<<<<<< HEAD
-=======
-  height: 80%;
-  font-size: 0.5em;
->>>>>>> 245afc1a6a5f80f3b28df099ca52cee244b35d10
 }
 
 .contact-form textarea {
