@@ -98,14 +98,21 @@ $(function(){
     if(!$(this).is(":animated")){
       $(this).animate({height:"100%"},'slow');
       $(this).children('.intro').addClass("showIntro");
+      $('.contact').fadeOut(300);
     }
     var index = $(this).index();
     $(this).children('.memberPic').attr("src","images/memberPic" + index + ".png");
   });
   $('.contactUs .member').mouseleave(function(){
-    $(this).animate({height:"50%"},'slow');
+    if($(window).width() <= 768){
+      $(this).animate({height:"20%"},'slow');
+    }
+    else{
+      $(this).animate({height:"50%"},'slow');
+    }
     $(this).children('.intro').removeClass("showIntro");
     $(this).children('.memberPic').attr("src","images/testMember.png");
+    $('.contact').fadeIn(300);
   });
 
   function changeTruthColor(index){

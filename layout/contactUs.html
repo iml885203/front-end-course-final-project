@@ -8,7 +8,7 @@
       趙紹安
     </div>
     <div class="intro">
-      只是個叉燒。
+      只是個北極叉燒豬。
     </div>
   </div>
   <div class="member">
@@ -17,7 +17,7 @@
       黃育舒
     </div>
     <div class="intro">
-      這裡打自介喔xD
+      網頁前端設計。
     </div>
   </div>
   <div class="member">
@@ -26,7 +26,7 @@
       郭育隆
     </div>
     <div class="intro">
-      這裡打自介喔xD
+      網頁架構設計、後台設計。
     </div>
   </div>
   <div class="member">
@@ -35,10 +35,46 @@
       吳品儒
     </div>
     <div class="intro">
-      這裡打自介喔xD
+      網頁前端設計，JQuery郵件實作。
     </div>
   </div>
   <div class="contact">
-    <div>聯絡信箱</div>
+    <div class="bigtitle">聯絡我們</div>
+    <form action="php-mysql/sendMail.php" class="form-horizontal" method="POST">
+      <div class="contact-form">
+        <div class="form-group">
+          <labe class="col-md-2 col-sm-3 col-xs-12 control-label">主旨</labe>
+          <div class="col-md-10 col-sm-10 col-xs-6">
+            <input type="text" name="title" id="name" class="form-control" placeholder="主旨">
+          </div>
+        </div>
+        <div class="form-group">
+          <labe class="col-md-2 col-sm-3 col-xs-12 control-label">回覆信箱</labe>
+          <div class="col-md-10 col-sm-10 col-xs-6">
+            <input type="email" name="email" id="email" class="form-control" placeholder="example@gmail.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <labe class="col-md-2 col-sm-3 col-xs-12 control-label">分類</labe>
+          <div class="col-md-10 col-sm-10 col-xs-6">
+            <select class="form-control" name="kind" id="kind">
+              <option value="0">Bug回報</option>
+              <option value="1">其他意見</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <labe class="col-md-2 col-sm-3 col-xs-12 control-label">內容</labe>
+          <div class="col-md-10 col-sm-10 col-xs-6">
+            <textarea type="text" rows="3" name="report" id="report" class="form-control" placeholder="回報內容"></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="contactBtn">
+            <button type="submit" class="btn btn-default btn-block">送出</button>
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
 </div>
