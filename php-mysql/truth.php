@@ -1,6 +1,9 @@
 <?php
   include 'mysql_connect.inc.php';
+<<<<<<< HEAD
   $limit_count = 10;
+=======
+>>>>>>> 245afc1a6a5f80f3b28df099ca52cee244b35d10
   $sql = "SELECT * FROM post ORDER BY id DESC";
   $result = mysql_query($sql);
 
