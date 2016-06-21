@@ -508,6 +508,12 @@ body {
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
 }
+@media only screen and (max-width: 768px) {
+  .contactUs .member {
+    height: 20%;
+  }
+}
+
 .contactUs .member .memberPic {
   width: 80%;
   margin-left: 10%;
@@ -545,6 +551,9 @@ body {
   bottom: 0;
   height: 50%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .contactUs .contact div {
   text-align: center;
@@ -582,12 +591,18 @@ body {
 .contactUs .contact div .showIntro {
   display: block;
 }
-.contactUs .contact .contact {
+.contactUs .contact {
   position: absolute;
   bottom: 0;
   height: 50%;
   width: 100%;
 }
+@media only screen and (max-width: 768px) {
+  .contactUs .contact {
+    height: 70%;
+  }
+}
+
 .contactUs .contact .contact div {
   text-align: center;
   font-family: "微軟正黑體";
@@ -621,6 +636,74 @@ body {
   width: 100%;
   overflow: hidden;
 }
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;;
+  align-items: center;
+  width: 50%;
+  height: 80%;
+}
+@media only screen and (max-width: 768px) {
+  .contact-form {
+    width: 100%;
+  }
+  .contact-form .bigtitle {
+    font-size: 0.5em;
+  }
+  .contact-form > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.contact-form > div div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 768px) {
+  .contact-form > div div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.contact .bigtitle {
+  font-size: 2em;
+  font-family: "Title Font";
+  font-weight: bold;
+  color: black;
+}
+
+.contact-form input {
+  width: 100%;
+  height: 80%;
+  font-size: 0.5em;
+}
+
+.contact-form textarea {
+  width: 100%;
+  resize: none;
+}
+
+.contactBtn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contactBtn button {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
 .contactUs .pace .pace-activity {
   position: fixed;
   top: 0;
