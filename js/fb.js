@@ -21,7 +21,8 @@ window.fbAsyncInit = function() {
       $('.loading').css('transform', 'translateY(-100%)');
       homePageShow();
     }
-    else if($('.searchEnd').length != 0){
+    else if(searchLoad){
+      searchLoad = false;
       NProgress.done();
       $('.loading .background').css('opacity', '0');
       $('.loading').css({

@@ -201,8 +201,9 @@ $(function(){
                 $content.append("<div class='clear'></div>");
 
               }
+              searchLoad = true;
               FB.XFBML.parse();
-              
+
               // $.fn.fullpage.reBuild();
               $.fn.fullpage.destroy('all');
               craeteFullPage();
@@ -226,7 +227,7 @@ $(function(){
     });
   }
 });
-
+var searchLoad = false;
 function homePageShow(){
   $lie = $('.slogan div h1 span');
   var i = 0;
