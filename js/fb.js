@@ -30,7 +30,12 @@ window.fbAsyncInit = function() {
         'transform': 'translateY(-100%)'
       });
       homePageReset();
-      loadingResize();
+      if($(window).width() >= 768){
+        $('.image').height($(window).height()/2);
+      }
+      else{
+        $('.image').height($(window).height()/3);
+      }
       $.fn.fullpage.moveTo(2);
       console.log('search end');
 

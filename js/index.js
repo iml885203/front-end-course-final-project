@@ -160,10 +160,10 @@ $(function(){
   //search
   $('.searchbar span button').click(function(){
     var k = $(this).parent().parent().children('input').val();
-    if(k == ''){
-      alert('請輸入探索關鍵字');
-      //return;
-    }
+    // if(k == ''){
+    //   alert('請輸入探索關鍵字');
+    //   return;
+    // }
     $.ajax({url: "php-mysql/search.php",
             data: {keyword : k},
             type: "GET",
