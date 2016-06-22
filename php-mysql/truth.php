@@ -31,9 +31,20 @@
 
         </div>
         <div class="content">
+          <div class="row">
+            <div class="col-md-6 col-sm-8 col-xs-12">
+              <div class=" input-group searchbar">
+                <input type="text" class="form-control" value="" placeholder="探索真相">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button">search</button>
+                </span>
+              </div>
+            </div>
+          </div>
+
           <div class="left">
             <div class="title">
-              <h3>#<?php echo $row[0] ?> <?php echo $row[1] ?></h>
+              <h3>#<?php echo $row[0] ?> <?php echo $row[1] ?></h3>
               <h4><a href="<?php echo $row[2] ?>" target="_blank"><?php echo $row[2] ?></a></h4>
             </div>
             <div class="image">

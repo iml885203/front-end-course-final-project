@@ -25,20 +25,20 @@
         <?php include 'layout/home.html'; ?>
       </div>
       <!-- about page -->
-      <div class="section">
+      <div class="section search-hide">
         <?php include 'layout/about.html'; ?>
       </div>
       <!-- truth page -->
-      <div class="section menu-button-white">
+      <div class="section menu-button-white search-hide">
         <?php include 'php-mysql/truth.php'; ?>
         <?php //include 'layout/truth.html'; ?>
       </div>
       <!-- post page -->
-      <div class="section menu-button-white">
+      <div class="section menu-button-white search-hide">
         <?php include 'layout/post.html'; ?>
       </div>
       <!-- contactUs page -->
-      <div class="section">
+      <div class="section search-hide">
         <?php include 'layout/contactUs.html'; ?>
       </div>
 

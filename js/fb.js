@@ -21,6 +21,18 @@ window.fbAsyncInit = function() {
       $('.loading').css('transform', 'translateY(-100%)');
       homePageShow();
     }
+    else if($('.searchEnd').length != 0){
+      NProgress.done();
+      $('.loading .background').css('opacity', '0');
+      $('.loading').css({
+        'transition': 'all 2s',
+        'transform': 'translateY(-100%)'
+      });
+      loadingResize();
+      $.fn.fullpage.moveTo(2);
+      console.log('search end');
+
+    }
 
   });
 };

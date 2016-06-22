@@ -3,6 +3,10 @@ $(function(){
   var _slideIndex = 0;
 
   $(document).ready(function() {
+    craeteFullPage();
+  });
+
+  function craeteFullPage(){
     $('#fullpage').fullpage({
       easingcss3: 'cubic-bezier(0.175, 0.885, 0.320, 1.275)',
       navigation: true,
@@ -27,7 +31,7 @@ $(function(){
         changeTruthColor(slideAnchor);
       }
     });
-  });
+  }
   function mobileMenyAutoColor(){
     $('.section.active').each(function(){
       if($(this).hasClass('menu-button-white')){
@@ -139,15 +143,79 @@ $(function(){
   // nprogress
   $(window).load(function(){
     NProgress.start();
+    $('#fp-nav').addClass('fp-nav-top');
   });
 
-  //loading
-  function loadingResize(){
-    $('.loading').width($(window).width());
-    $('.loading').height($(window).height());
+
+
+  //search
+  $('.searchbar span button').click(function(){
+    var k = $(this).parent().parent().children('input').val();
+    if(k == ''){
+      alert('請輸入探索關鍵字');
+      //return;
+    }
+    $.ajax({url: "php-mysql/search.php",
+            data: {keyword : k},
+            type: "GET",
+            dataType: "json",
+            success: function(json) {
+              if(json == 'search not found'){
+                alert('探索不到真相');
+                return;
+              }
+              $('.search-hide').removeClass('section').fadeOut();
+              NProgress.start();
+
+              $('.loading .background').css('opacity', '1');
+              $('.loading').css({
+                'transition': 'all 0s',
+                'transform': 'translateY(0%)'
+              });
+
+              //search home page
+              createSearchEndButton();
+
+              var numOfJson = json.length;
+              for(var i = 0; i<numOfJson; i++){
+                $('#fullpage').append("<div class='section search s"+i+"'></div>");
+                $('.s'+i).append("<div class='truth'></div>");
+                $('.s'+i+" .truth").append("<div class='content'></div>");
+                $content = $('.s'+i+" .truth .content");
+                $content.append("<div class='left'></div>");
+                $content.children('.left').append("<div class='title'><h3>#"+json[i]["id"]+"<h4>"+json[i]["title"]+"</h4></h3></div>");
+                $content.children('.left').append("<div class='image'><img src='"+json[i]["imageurl"]+"' /></div>");
+
+                $content.append("<div class='right'></div>");
+                $content.children('.right').append(json[i]["content"]+'<div class="fb-like" data-href="http://lguo.ddns.net/final-project/index.php#'+json[i]["id"]+'" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div><div class="fb-comments fb-computer" data-href="http://lguo.ddns.net/final-project/index.php#'+json[i]["id"]+'" data-width="auto" data-numposts="1" data-mobile="true"></div><button type="button" class="btn btn-primary btn-xs fb-mobile" data-toggle="modal" data-target="#myModal'+json[i]["id"]+'">留言</button>');
+
+                $content.append("<div class='clear'></div>");
+
+              }
+              FB.XFBML.parse();
+              $('#fp-nav').removeClass('fp-nav-top');
+              // $.fn.fullpage.reBuild();
+              $.fn.fullpage.destroy('all');
+              craeteFullPage();
+              $.fn.fullpage.setAutoScrolling(false);
+              $.fn.fullpage.setFitToSection(false);
+            }
+          });
+  });
+  function createSearchEndButton(){
+    $('body').append("<div class='searchEnd'>BACK</div>");
+    $('.searchEnd').click(function(){
+      $('#fp-nav').addClass('fp-nav-top');
+      NProgress.start();
+      $('.search').remove();
+      $('.searchEnd').remove();
+      $('.search-hide').addClass('section').css('display', '');
+      $.fn.fullpage.destroy('all');
+      craeteFullPage();
+      NProgress.done();
+
+    });
   }
-
-
 });
 
 function homePageShow(){
@@ -169,4 +237,10 @@ function homePageReset(){
     'transition': 'all 0s',
     'color': 'rgba(0,0,0,0)'
   });
+}
+
+//loading
+function loadingResize(){
+  $('.loading').width($(window).width());
+  $('.loading').height($(window).height());
 }
