@@ -14,11 +14,11 @@ window.fbAsyncInit = function() {
   FB.Event.subscribe('xfbml.render', function(response){
     console.log('xfbml load');
     loadcount++;
-    homePageReset();
     if(loadcount == 2){
       NProgress.done();
       $('.loading .background').css('opacity', '0');
       $('.loading').css('transform', 'translateY(-100%)');
+      homePageReset();
       homePageShow();
     }
     else if(searchLoad){
@@ -29,6 +29,7 @@ window.fbAsyncInit = function() {
         'transition': 'all 2s',
         'transform': 'translateY(-100%)'
       });
+      homePageReset();
       loadingResize();
       $.fn.fullpage.moveTo(2);
       console.log('search end');
