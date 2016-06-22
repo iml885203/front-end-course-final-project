@@ -29,6 +29,15 @@ $(function(){
       afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){
         _slideIndex = slideIndex;
         changeTruthColor(slideAnchor);
+      },
+      afterRender: function(){
+        if($('.searchEnd').length != 0){
+          $('#fp-nav').removeClass('fp-nav-top');
+        }
+        else{
+          $('#fp-nav').addClass('fp-nav-top');
+        }
+
       }
     });
   }
@@ -143,7 +152,7 @@ $(function(){
   // nprogress
   $(window).load(function(){
     NProgress.start();
-    $('#fp-nav').addClass('fp-nav-top');
+
   });
 
 
@@ -193,7 +202,7 @@ $(function(){
 
               }
               FB.XFBML.parse();
-              $('#fp-nav').removeClass('fp-nav-top');
+              
               // $.fn.fullpage.reBuild();
               $.fn.fullpage.destroy('all');
               craeteFullPage();
